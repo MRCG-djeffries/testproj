@@ -2,6 +2,7 @@ interpretHPV=function(){
   library(flextable)
   library(officer)
   library(magrittr)
+  # runs the CV version of prev variabiltiy
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
   Nsim = 20  
