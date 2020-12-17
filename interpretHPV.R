@@ -44,7 +44,23 @@ interpretHPV=function(){
     NS=rbind(NS,Ns)
     
   }
-  meanP=colMeans(Pout)
+  # test the CI on RR
+  z=1-Pout[,1]/Pout[,5]
+  hist(z,500)
+  dum=quantile(z,c(0.025,0.975))
+  LS=100*dum[1]
+  US=100*dum[2]
+  rv=1/100
+  ru=5/100
+  rr=rv/ru
+  Nv=3619
+  Nu=3619
+  L=exp(log(rr)-1.96*sqrt((1-rv)/(Nv*rv) + (1-ru)/(Nu*ru)))
+  U=exp(log(rr)+1.96*sqrt((1-rv)/(Nv*rv) + (1-ru)/(Nu*ru)))
+  cat(paste0("95% CI on VB=80% is (using simple taylor series formula):",100*(1-U)," to ",100*(1-L),"\n"))
+  cat(paste0("95% CI on VB=80% is (using simulated data):",LS," to ",US,"\n"))
+  
+   meanP=colMeans(Pout)
   dum=colQ(Pout,0.025,0.975)
   lowP=dum$LQ
   uppP=dum$UQ
