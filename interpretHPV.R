@@ -21,7 +21,7 @@ interpretHPV=function(){
     compound_percent[j] = d[j,"compound_percent"]
     house_percent[j] = d[j,"house_percent"]
     subject_percent[j] = d[j,"subject_percent"]
-  } 
+  }  
   
   Pout=NULL
   NV=NULL
