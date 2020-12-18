@@ -10,7 +10,8 @@ interpretHPV=function(){
   # xclip -selection clipboard < ~/.ssh/id_rsa.pub
   # go here https://github.com/settings/keys
   # log in and paste key
-  
+  # git remote set-url origin git@github.com:MRCG-djeffries/testproj.git
+  # git remote show origin
   # runs the CV version of prev variabiltiy
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
