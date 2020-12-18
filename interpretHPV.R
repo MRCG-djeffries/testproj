@@ -2,7 +2,11 @@ interpretHPV=function(){
   library(flextable)
   library(officer)
   library(magrittr)
-  # test branch
+  # testproj should exist - easiest to create it in github
+  # git remote add origin https://github.com/MRCG-djeffries/testproj
+  # git push -u origin master
+  # can remove alias with
+  # git remote rm origin
   # runs the CV version of prev variabiltiy
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
