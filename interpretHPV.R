@@ -14,6 +14,7 @@ interpretHPV=function(){
   # git remote show origin
   # changed from windows
   # runs the CV version of prev variabiltiy
+  # change 2
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
   Nsim = 20  
