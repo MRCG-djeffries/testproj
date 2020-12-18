@@ -12,6 +12,7 @@ interpretHPV=function(){
   # log in and paste key
   # git remote set-url origin git@github.com:MRCG-djeffries/testproj.git
   # git remote show origin
+  # changed from windows
   # runs the CV version of prev variabiltiy
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
