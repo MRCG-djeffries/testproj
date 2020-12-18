@@ -86,7 +86,7 @@ interpretHPV=function(){
   FF=color(FF,j=c(8,9),color="red")
   FF= set_caption(FF, caption = "Simulation")
   FF= autofit(FF)
-  save_as_html(FF,path="~/HPV/sim3.html")
+  save_as_html(FF,path="~/HPV/sim4.html")
   #doc =read_docx()%>%body_add_flextable(value = FF,split=TRUE)%>%
   #body_end_section_landscape()  %>% pri2nt(target = "~/HPV/sim.docx" )  
   # fileout = tempfile(fileext = ".docx")
