@@ -17,6 +17,7 @@ interpretHPV=function(){
   # change 2
   # change 3
   # git push -u origin main
+  # now from mac
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
   Nsim = 20  
