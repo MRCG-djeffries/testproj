@@ -16,6 +16,7 @@ interpretHPV=function(){
   # runs the CV version of prev variabiltiy
   # change 2
   # change 3
+  # git push -u origin main
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
   Nsim = 20  
