@@ -9,7 +9,8 @@ interpretHPV=function(){
   # test key
   # again
   #z
-  r=8
+  # always check that the main local and main origin ar ethe same
+  # git diff main origin/main
   # how to add krsa key
   # ssh-keygen -t rsa -C "djeffries@mrc.gm"
   # use defaults - just hit return
