@@ -2,26 +2,6 @@ interpretHPV=function(){
   library(flextable)
   library(officer)
   library(magrittr)
-  # to get repository git config --get remote.origin.url
-  # test key
-  # again
-  # how to add krsa key
-  # ssh-keygen -t rsa -C "djeffries@mrc.gm"
-  # use defaults - just hit return
-  # check exists ls ~/.ssh/*.pub
-  # copy key (sudo apt-get install xclip -y if necessary)
-  # xclip -selection clipboard < ~/.ssh/id_rsa.pub
-  # go here https://github.com/settings/keys
-  # log in and paste key
-  # git remote set-url origin git@github.com:MRCG-djeffries/testproj.git
-  # git remote show origin
-  # changed from windows
-  # runs the CV version of prev variabiltiy
-  # change 2
-  # change 3
-  # git push -u origin main
-  # now from mac
-  # now from ubuntu
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
   Nsim = 20  
@@ -41,7 +21,7 @@ interpretHPV=function(){
     compound_percent[j] = d[j,"compound_percent"]
     house_percent[j] = d[j,"house_percent"]
     subject_percent[j] = d[j,"subject_percent"]
-  }  
+  }
   
   Pout=NULL
   NV=NULL
@@ -53,33 +33,17 @@ interpretHPV=function(){
     cat(paste0("samp=",j,"\n"))
     L=readRDS(file=paste0("~/HPV/HPV5/run_",j,".rds"))
     Pout=rbind(Pout,L$P)
-    Nv=matrix(L$Tot[,1],nrow=20,ncol=84)
-    Nc=matrix(L$Tot[,2],nrow=20,ncol=84)
-    Nh=matrix(L$Tot[,3],nrow=20,ncol=84)
-    Ns=matrix(L$Tot[,4],nrow=20,ncol=84)
+    Nv=matrix(L$Tot[,1],nrow=20,ncol=168)
+    Nc=matrix(L$Tot[,2],nrow=20,ncol=168)
+    Nh=matrix(L$Tot[,3],nrow=20,ncol=168)
+    Ns=matrix(L$Tot[,4],nrow=20,ncol=168)
     NV=rbind(NV,Nv)
     NC=rbind(NC,Nc)
     NH=rbind(NH,Nh)
     NS=rbind(NS,Ns)
     
   }
-  # test the CI on RR
-  z=1-Pout[,1]/Pout[,5]
-  hist(z,500)
-  dum=quantile(z,c(0.025,0.975))
-  LS=100*dum[1]
-  US=100*dum[2]
-  rv=1/100
-  ru=5/100
-  rr=rv/ru
-  Nv=3619
-  Nu=3619
-  L=exp(log(rr)-1.96*sqrt((1-rv)/(Nv*rv) + (1-ru)/(Nu*ru)))
-  U=exp(log(rr)+1.96*sqrt((1-rv)/(Nv*rv) + (1-ru)/(Nu*ru)))
-  cat(paste0("95% CI on VB=80% is (using simple taylor series formula):",100*(1-U)," to ",100*(1-L),"\n"))
-  cat(paste0("95% CI on VB=80% is (using simulated data):",LS," to ",US,"\n"))
-  
-   meanP=colMeans(Pout)
+  meanP=colMeans(Pout)
   dum=colQ(Pout,0.025,0.975)
   lowP=dum$LQ
   uppP=dum$UQ
@@ -105,9 +69,9 @@ interpretHPV=function(){
   FF=color(FF,j=c(8,9),color="red")
   FF= set_caption(FF, caption = "Simulation")
   FF= autofit(FF)
-  save_as_html(FF,path="~/HPV/sim4.html")
+  save_as_html(FF,path="~/HPV/sim2.html")
   #doc =read_docx()%>%body_add_flextable(value = FF,split=TRUE)%>%
-  #body_end_section_landscape()  %>% pri2nt(target = "~/HPV/sim.docx" )  
+  #body_end_section_landscape()  %>% print(target = "~/HPV/sim.docx" )  
   # fileout = tempfile(fileext = ".docx")
   # fileout = "~/HPV/sim.docx" 
   # print(doc, target = fileout)

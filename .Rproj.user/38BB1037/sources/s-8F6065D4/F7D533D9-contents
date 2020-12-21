@@ -2,9 +2,6 @@ interpretHPV=function(){
   library(flextable)
   library(officer)
   library(magrittr)
-  # to get repository git config --get remote.origin.url
-  # test key
-  # again
   # how to add krsa key
   # ssh-keygen -t rsa -C "djeffries@mrc.gm"
   # use defaults - just hit return
@@ -13,15 +10,8 @@ interpretHPV=function(){
   # xclip -selection clipboard < ~/.ssh/id_rsa.pub
   # go here https://github.com/settings/keys
   # log in and paste key
-  # git remote set-url origin git@github.com:MRCG-djeffries/testproj.git
-  # git remote show origin
-  # changed from windows
+  
   # runs the CV version of prev variabiltiy
-  # change 2
-  # change 3
-  # git push -u origin main
-  # now from mac
-  # now from ubuntu
   d=readRDS("~/HPV/runfile4.rds")
   Nd=nrow(d)
   Nsim = 20  
