@@ -5,6 +5,7 @@ interpretHPV=function(){
   # to get repository git config --get remote.origin.url
   # test key
   # again
+  #z
   # how to add krsa key
   # ssh-keygen -t rsa -C "djeffries@mrc.gm"
   # use defaults - just hit return
